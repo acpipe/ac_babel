@@ -1,13 +1,3 @@
----
-title: GC算法和分代回收设计
-date: 2018-04-24 23:44:00
-categories: jvm
-tags: 
-- jvm
-- java
-- 虚拟机
----
-
 # gc算法分类
 
 ## 标记-清除算法
@@ -57,9 +47,9 @@ tags:
 
 ## 为什么要分代?
 
-* 对象的生命周期不一样。有的对象是“朝生夕死”，有的对象存活的时间就比较长。
-* 如果不分代，我们要对对的所有区域进行扫描，效率不高
-* 充分发挥不同GC算法。
+* 对象的**生命周期** 不一样。有的对象是“朝生夕死”，有的对象存活的时间就比较长。
+* 如果不分代，我们要对对的所有区域进行扫描，**效率** 不高
+* 充分发挥不同**GC算法** 。
 
 ## 如何分代
 
@@ -81,7 +71,7 @@ tags:
   * -Xms 20M ：最小堆内存
   * -Xmx 20M： 最大堆内存
   * -Xmn 10M：新生代大小
-  * -XXSurvivorRatio=8 新生代中`Eden`区和**其中一个** Survivor区的比例( **8:1:1**)。
+    * -XXSurvivorRatio=8 新生代中`Eden`区和**其中一个** Survivor区的比例( **8:1:1**)。
     * eden space: 8192k
     * from space: 1024k
     * to space: 1024k
@@ -91,7 +81,7 @@ tags:
 
 ### 年老代
 
-存放生命周期长的对象。经历过N次回收之后，仍然存活的对象。一般使用**标记-整理**算法GC
+存放生命周期长的对象。经历过N次回收之后，仍然存活的对象。一般使用**标记-整理**算法GC，但是常用的CMS是标记-清除算法。
 
 ### 永久代
 
@@ -101,7 +91,8 @@ tags:
 
 - Partial GC：并不收集整个GC堆的模式
 
-- - Young GC：只收集young gen的GC
+  * Young GC：只收集young gen的GC
+
   - Old GC：只收集old gen的GC。只有CMS的concurrent collection是这个模式
   - Mixed GC：收集整个young gen以及部分old gen的GC。只有G1有这个模式
 
@@ -109,6 +100,9 @@ tags:
 
 Major GC通常是跟full GC是等价的，收集整个GC堆。但因为HotSpot VM发展了这么多年，外界对各种名词的解读已经完全混乱了，当有人说“major GC”的时候一定要问清楚他想要指的是上面的full GC还是old GC。
 
-- young GC：当young gen中的eden区分配满的时候触发。注意young GC中有部分存活对象会晋升到old gen，所以young GC后old gen的占用量通常会有所升高。
-- full GC：当准备要触发一次young GC时，如果发现统计数据说之前young GC的平均晋升大小比目前old gen剩余的空间大，则不会触发young GC而是转为触发full GC（因为HotSpot VM的GC里，除了CMS的concurrent collection之外，其它能收集old gen的GC都会同时收集整个GC堆，包括young gen，所以不需要事先触发一次单独的young GC）；或者，如果有perm gen的话，要在perm gen分配空间但已经没有足够空间时，也要触发一次full GC；或者System.gc()、heap dump带GC，默认也是触发full GC。
+- young GC：当young gen中的**eden区分配满**的时候触发。注意young GC中有部分存活对象会晋升到old gen，所以young GC后old gen的占用量通常会有所升高。
+- full GC：
+  - 当准备要触发一次young GC时，如果发现统计数据说之前young GC的平均晋升大小比目前old gen剩余的空间大，则不会触发young GC而是转为触发full GC（因为HotSpot VM的GC里，除了CMS的concurrent collection之外，其它能收集old gen的GC都会同时收集整个GC堆，包括young gen，所以不需要事先触发一次单独的young GC）；
+  - 或者如果有perm gen的话，要在perm gen分配空间但已经没有足够空间时，也要触发一次full GC；
+  - 或者System.gc()、heap dump带GC，默认也是触发full GC。
 
