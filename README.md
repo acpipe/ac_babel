@@ -1,11 +1,36 @@
-## 设计模式
+# 设计模式
 
 * [单例模式](./单例模式.md)
+
+
 * [建造者模式在日志系统中的应用](./建造者模式在日志系统中的运用.md)
+* [策略模式使用的小技巧](策略模式使用的小技巧.md)
 
 
+# jvm
+
+* [HashMap内部原理](HashMap内部原理.md)
+* [GC区域](./GC区域.md)
+* [GC算法和分代回收设计](./GC算法和分代回收设计.md)
+* [垃圾回收器分类](垃圾回收器分类.md)
+* [G1垃圾回收器](G1垃圾回收器.md)
+* [G1参数设置](G1参数设置.md)
+
+# 代码&&架构
+
+* [Best Practice For Code Review](best-practice-for-code-review.md)
+* [如何做好的design](如何做好的design.md)
+
+# 机器学习
+
+* [决策树](决策树.md)
+
+# kafka
+
+* [kafka简介](kafka简介.md)
+* [kafka运维总结](kafka运维总结.md)
 
 
+# Http
 
-
-
+* [restful学习](restful学习.md)

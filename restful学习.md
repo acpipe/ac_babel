@@ -1,14 +1,3 @@
----
-title: restful学习
-date: 2018-04-25 10:00:12
-tags: 
- - restful
- - http
- - 架构风格
- - SOA
-categories: http
----
-
 关于restful的文章，网上文章搞得我云里雾里，花了点时间整理了一下。
 
 # rest, restful,restful-api

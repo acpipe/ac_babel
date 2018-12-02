@@ -1,11 +1,3 @@
----
-title: java8之stream
-date: 2017-5-12 19:32:10
-tags:
-	- java8
-categories: java
----
-
 # Java8 之stream操作
 
 # 什么是流
