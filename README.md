@@ -21,10 +21,11 @@
 * [G1参数设置](G1参数设置.md)
 * [java类加载机制](java类加载机制.md)
 
-# 代码&&架构
+# 代码&&架构&&设计
 
 * [Best Practice For Code Review](best-practice-for-code-review.md)
 * [如何做好的design](如何做好的design.md)
+* [分布式锁的几种实现方式](分布式锁的几种实现方式.md)
 
 # 机器学习
 
