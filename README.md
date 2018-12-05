@@ -23,6 +23,7 @@
 
 # 代码&&架构&&设计
 
+* [问题定位经验](问题定位经验.md)
 * [Best Practice For Code Review](best-practice-for-code-review.md)
 * [如何做好的design](如何做好的design.md)
 * [分布式锁的几种实现方式](分布式锁的几种实现方式.md)
