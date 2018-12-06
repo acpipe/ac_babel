@@ -1,11 +1,3 @@
----
-title: best practice for code review
-date: 2017-11-15 13:51:59
-tags:
-	- code review
-	- code
----
-
 上一篇文章写了[如何做好design](https://acceml.github.io/2017/11/10/%E5%A6%82%E4%BD%95%E5%81%9A%E5%A5%BD%E7%9A%84design/)，其实也是一个如何指导新人，做design review的方法论。由于tech leader是一个有代码洁癖的人，组内的代码互相review一直都特别严格，经常一份小代码提了数十个comments。这里同样总结一些方法论，如何做好code review。
 
 # None-goal

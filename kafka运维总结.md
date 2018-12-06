@@ -1,11 +1,3 @@
----
-title: kafka运维总结
-date: 2017-1-10 19:53:04
-tags:
-	- kafka
-categories: kafka
----
-
 # 1.自身日志量过大的问题
 kafka运行一段时间之后，会发现它的主机磁盘使用率在缓慢增长，查看数据日志的持有量还是之前设置的阈值。 
 ![这里写图片描述](kafka运维总结/1.png)
@@ -27,8 +19,8 @@ log4j.appender.kafkaAppender.layout.ConversionPattern=[%d] %p %m (%c)%n
 ...
 ```
 可以看到它自身日志是按照小时去备份的，而且没有自动清除的功能，所以自身日志一直没有清掉，就可能会影响到对数据量的预估和判断。这时候我们只想保留最近n天的日志。log4j并没有配置这样的功能，在不改动源码的情况下，有两种办法达到目的。
-    1. 写一个crontab的脚本自动清除；
-    2. 修改log4j.properties，按照大小去自动清除。
+​    1. 写一个crontab的脚本自动清除；
+​    2. 修改log4j.properties，按照大小去自动清除。
 
 
 ```

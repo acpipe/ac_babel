@@ -1,12 +1,3 @@
----
-title: kafka简介
-date: 2017-3-1 19:28:41
-tags:
-	- kafka
-	- 中间件
-categories: kafka
----
-
 # 背景
 起源于Linkedin，在apache开源，基于发布订阅的分布式消息系统。
 
