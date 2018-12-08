@@ -11,6 +11,7 @@
 ## 源码
 
 * [HashMap内部原理](HashMap内部原理.md)
+* [java快速读取文件](java快速读取文件.md)
 
 ## jvm
 
@@ -32,6 +33,7 @@
 * [Best Practice For Code Review](best-practice-for-code-review.md)
 * [如何做好的design](如何做好的design.md)
 * [分布式锁的几种实现方式](分布式锁的几种实现方式.md)
+* [基于bool表达式的广告索引](基于bool表达式的广告索引.md)
 
 # 机器学习
 
@@ -50,3 +52,4 @@
 # 线上问题定位
 
 * [线上问题总结](线上问题总结.md)
+
