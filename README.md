@@ -50,6 +50,10 @@
 
 * [restful学习](restful学习.md)
 
+# Redis
+
+* [redis-pipeline](redis-pipeline.md)
+
 # 线上问题定位
 
 * [线上问题总结](线上问题总结.md)
