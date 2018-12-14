@@ -53,6 +53,7 @@
 # Redis
 
 * [redis-pipeline](redis-pipeline.md)
+* [redis-String vs Hash](redis-String vs Hash.md)
 
 # 线上问题定位
 
