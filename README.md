@@ -8,6 +8,10 @@
 
 # java
 
+## 并发
+
+* [synchronized实现原理](https://blog.csdn.net/javazejian/article/details/72828483)
+
 ## 源码
 
 * [HashMap内部原理](HashMap内部原理.md)
