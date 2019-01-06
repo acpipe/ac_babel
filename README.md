@@ -81,7 +81,8 @@
   * 演化1：引入LruCache
   * 演化2：因为折中全量更新而引入时效清退机制
   * 演化3：因为锁的问题进行hash分片
-  * 演化4：零拷贝技术（没看懂）
+  * 演化4：零拷贝技术（没看懂
+* [MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
 * [LRU原理](https://zhuanlan.zhihu.com/p/34133067)
 
 # 线上问题定位
@@ -92,3 +93,4 @@
 
 * [零拷贝](https://blog.csdn.net/u013096088/article/details/79122671)
 * [QPS限流算法](https://blog.csdn.net/tianyaleixiaowu/article/details/74942405)
+
