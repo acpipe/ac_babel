@@ -27,6 +27,12 @@
 * [G1参数设置](G1参数设置.md)
 * [java类加载机制](java类加载机制.md)
 * [jvm命令使用](jvm命令使用.md)
+* [从实际案例聊聊Java应用的GC优化](https://tech.meituan.com/jvm_optimize.html)
+  * young gc 和 full gc 频繁，调大新生代，young gc 回收时间 = 扫描 + 复制，复制的变少，young gc 回收次数变少，且回收时间不会长。young gc 次数少，相应的full gc 也会变少。
+  * 请求高峰发生gc，可用性下降
+    * CMSMaxAbortablePrecleanTime 调大，abortable preclean Time 会进行young gc，减少remark 的对象
+  * full gc 频繁，老年代不够，动态扩容引起
+    * java8 去除了老年代，引入元空间
 
 # Spring
 
