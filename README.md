@@ -47,6 +47,12 @@
 * [一致性hash](一致性hash.md)
 * [基于bool表达式的广告索引](基于bool表达式的广告索引.md)
 * [实验平台设计](http://ningg.top/experiment-series-flow-router/)
+* 广告索引
+  * bool 表达式，索引的量级最大的时候就是广告的数量
+  * 更新索引的一致性
+    * 用一个时间戳，大于某个时间戳的才更新过来
+    * 重启机子的时候
+* redis 双写
 
 # Netty
 
@@ -74,6 +80,8 @@
 
 * [redis-pipeline](redis-pipeline.md)
 * [redis-String-vs-Hash](redis-String-vs-Hash.md)
+* 缓存穿透问题
+  * 在启动的时候放很少的流量进来，权重 + 启动时间，预热服务
 
 # 数据库
 
@@ -87,7 +95,7 @@
   * 演化1：引入LruCache
   * 演化2：因为折中全量更新而引入时效清退机制
   * 演化3：因为锁的问题进行hash分片
-  * 演化4：零拷贝技术（没看懂
+  * 演化4：零拷贝技术
 * [MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
 * [LRU原理](https://zhuanlan.zhihu.com/p/34133067)
 
@@ -99,4 +107,3 @@
 
 * [零拷贝](https://blog.csdn.net/u013096088/article/details/79122671)
 * [QPS限流算法](https://blog.csdn.net/tianyaleixiaowu/article/details/74942405)
-
