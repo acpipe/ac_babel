@@ -12,6 +12,7 @@
 
 * [synchronized实现原理](https://blog.csdn.net/javazejian/article/details/72828483)
 * [不可不说的Java“锁”事](https://zhuanlan.zhihu.com/p/50098743)
+* [ThreadLocal](https://www.zhihu.com/question/23089780/answer/62097840)
 
 ## 源码
 
@@ -53,6 +54,10 @@
     * 用一个时间戳，大于某个时间戳的才更新过来
     * 重启机子的时候
 * redis 双写
+* 美团高可用系统
+  * 限流
+  * 熔断
+  * 压测
 
 # Netty
 
@@ -81,7 +86,8 @@
 * [redis-pipeline](redis-pipeline.md)
 * [redis-String-vs-Hash](redis-String-vs-Hash.md)
 * 缓存穿透问题
-  * 在启动的时候放很少的流量进来，权重 + 启动时间，预热服务
+  * 在启动的时候放很少的流量进来，权重 + 启动时间
+  * 提前建连接池，预热服务
 
 # 数据库
 
