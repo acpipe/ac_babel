@@ -13,6 +13,44 @@
 * [synchronized实现原理](https://blog.csdn.net/javazejian/article/details/72828483)
 * [不可不说的Java“锁”事](https://zhuanlan.zhihu.com/p/50098743)
 * [ThreadLocal](https://www.zhihu.com/question/23089780/answer/62097840)
+* [ThreadLocal2](http://www.jasongj.com/java/threadlocal/)
+
+```java
+public class Foo
+{
+    // SimpleDateFormat is not thread-safe, so give one to each thread
+    private static final ThreadLocal<SimpleDateFormat> formatter = new ThreadLocal<SimpleDateFormat>(){
+        @Override
+        protected SimpleDateFormat initialValue()
+        {
+            return new SimpleDateFormat("yyyyMMdd HHmm");
+        }
+    };
+
+    public String formatIt(Date date)
+    {
+        return formatter.get().format(date);
+    }
+}
+```
+
+```
+    private static final ThreadLocal<Map<String, String>> MAPPING = ThreadLocal.withInitial(HashMap::new);
+
+    public static void doBefore(Client client) {
+        MAPPING.get().put(A, B);
+    }
+
+
+
+    public static void doAfter(ClientInfoV3 clientInfoV3) {
+         MAPPING.get().get(A);
+    }
+```
+
+
+
+
 
 ## 源码
 
@@ -34,6 +72,8 @@
     * CMSMaxAbortablePrecleanTime 调大，abortable preclean Time 会进行young gc，减少remark 的对象
   * full gc 频繁，老年代不够，动态扩容引起
     * java8 去除了老年代，引入元空间
+* G1 参数  
+  * [去掉StringDedup](https://stackoverflow.com/questions/42080648/why-when-you-would-not-want-to-have-java-8-usestringdeduplication-enabled-in-jvm)
 
 # Spring
 
@@ -80,6 +120,7 @@
 # Http
 
 * [restful学习](restful学习.md)
+* [https如何保证加密的安全性](https://www.jianshu.com/p/b894a7e1c779)
 
 # Redis
 
@@ -112,5 +153,19 @@
 # 基础
 
 * [零拷贝](https://blog.csdn.net/u013096088/article/details/79122671)
+
 * [QPS限流算法](https://blog.csdn.net/tianyaleixiaowu/article/details/74942405)
+
 * [分布式事务](分布式事务.md)
+
+* [闭包](http://www.runoob.com/scala/scala-closures.html)
+
+  * 闭包是一个函数，返回值依赖于声明在函数外部的一个或多个变量。闭包通常来讲可以简单的认为是可以访问一个函数里面局部变量的另外一个函数
+
+  * 如下面这段匿名的函数：`val multiplier = (i:Int) => i * 10  `
+
+  * 这里我们引入一个自由变量 factor，这个变量定义在函数外面。
+
+    这样定义的函数变量 multiplier 成为一个"闭包"，因为它引用到函数外面定义的变量，定义这个函数的过程是将这个自由变量捕获而构成一个封闭的函数。
+
+* 如何实现一个ImmutableSet
