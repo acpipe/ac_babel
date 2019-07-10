@@ -144,6 +144,7 @@ public class Foo
   * 演化4：零拷贝技术
 * [MySQL索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
 * [LRU原理](https://zhuanlan.zhihu.com/p/34133067)
+* [分布式事务](分布式事务.md)
 
 # 线上问题定位
 
@@ -152,13 +153,9 @@ public class Foo
 # 基础
 
 * [零拷贝](https://blog.csdn.net/u013096088/article/details/79122671)
-
 * [QPS限流算法](https://blog.csdn.net/tianyaleixiaowu/article/details/74942405)
-
 * [分布式事务](分布式事务.md)
-
 * [闭包](http://www.runoob.com/scala/scala-closures.html)
-
 * 如何实现一个ImmutableSet
 
 # Beautiful DT
@@ -166,3 +163,5 @@ public class Foo
 * trie 树
 
 # design
+
+* 批量接口通用方案.
